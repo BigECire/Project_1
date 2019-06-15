@@ -1,6 +1,17 @@
 body {
     text-align: center;
     margin: auto;
-    background-image: linear-gradient(lightgrey, white, white);
     background-size: auto;
+}
+.display-4 {
+    color: white;
+    font-family: 'Alegreya Sans', sans-serif;
+    font-size: 60px;
+    }
+
+.lead{
+    color: white;
+}    
+.jumbotron {
+    background: linear-gradient(to bottom right,#89b5ab, #89b5ab);
 }
