@@ -4,13 +4,13 @@ body {
     background-size: auto;
 }
 .display-4 {
-    color: white;
+    color: #ae1903;
     font-family: 'Alegreya Sans', sans-serif;
     font-size: 60px;
     }
 
 .lead{
-    color: white;
+    color: #ff5600;
 }    
 .jumbotron {
     background: linear-gradient(to bottom right,#89b5ab, #89b5ab);
