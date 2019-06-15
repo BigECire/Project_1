@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>Time for a Drink</title>
+
+    <!-- link to external css files and fonts -->
+    <link rel="stylesheet" type="text/css" media="screen" href="assets/css/style.css" />
+    <link href="https://fonts.googleapis.com/css?family=Alegreya+Sans:900" rel="stylesheet">
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="assets/javascript/logic.js"></script>
+
+
+</head>
+
+<body background="assets/images/cork_1_@2X.png">
+    <div class="container-fluid">
+        <div class="jumbotron jumbotron-fluid">
+            <div class="container">
+                <h1 class="display-4">Time for a Drink!</h1>
+                <p class="lead">It's 5 O'Clock somewhere! What will you be having?</p>
+            </div>
+        </div>
+
+    </div>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">Navbar</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+            aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#"></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#"></a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">
+                        Dropdown link
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <a class="dropdown-item" href="#">Favorites</a>
+                        <a class="dropdown-item" href="#">Wishlist</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="card">
+        <div class="card-body">
+            <div class="container">
+                <div class="row">
+                    <div class="col-7">
+                        <h5 class="card-title" id="recipe-name">Recipe Name</h5>
+                        <table class="table table-sm table-hover">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Ingredients</th>
+                                    <th scope="col">Measurements</th>
+                                </tr>
+                            </thead>
+                            <tbody id="ingredients-table">
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="col-1">
+                    </div>
+                    <div class="col-4">
+                        <img class="card-img-top" id="recipe-img"src="#" alt="Card image cap">
+                    </div>
+                </div>
+                <div class="row">
+                        <p class="card-text" id="recipe-instructions">Recipe instructions go here.</p>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+
+</body>
+
+</html>
