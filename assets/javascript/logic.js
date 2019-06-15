@@ -41,6 +41,17 @@ $(document).ready(function () {
       method: "GET"
     }).then(function (response) {
       console.log(response);
+      console.log(response.drinks[0].strDrink);
+      console.log(response.drinks[0].strDrinkThumb);
+      console.log(response.drinks[0].strInstructions);
+      var ingredient = response.drinks[0].strIngredient1
+        var i = 1
+      while (ingredient !== "") {
+        console.log(response["drinks"][0]["strIngredient" + i] + ": " + response["drinks"][0]["strMeasure" + i]);
+        i++
+        ingredient = response["drinks"][0]["strIngredient" + i]
+      }
+      
     })
   })
 })
