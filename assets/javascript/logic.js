@@ -12,6 +12,27 @@ var queryURL = "https://www.thecocktaildb.com/api/json/v1/1/" + searchType + "="
       method: "GET"
     }).then(function(response) {
       console.log(response);
+      for (let i = 0; i < response.drinks.length; i++) {
+        var card = $("<div>")
+        card.addClass("card result-card")
+
+        var image = $("<img>")
+        image.addClass("card-img-top")
+        image.attr("src", response.drinks[i].strDrinkThumb)
+        image.attr("alt", response.drinks[i].strDrink + " image")
+        card.append(image)
+
+        var title = $("<h4>")
+        title.addClass("card-title")
+        title.text(response.drinks[i].strDrink)
+        card.append(title)
+
+        $("#results").append(card)
+        
+      }
     });
+});
+$(document).on("click", "result-card", function() {
+  
 })
 })
