@@ -17,9 +17,13 @@ body {
     color: #ff5600;
 }    
 .jumbotron {
-    background: linear-gradient(to bottom right,#89b5ab, #89b5ab);
+    background: linear-gradient(to bottom right,#89b5ab, #56867a);
 }
 #recipe-name{
     color: #9cb805;
     font-size: 30px;
+}
+
+#results:empty{
+    visibility: hidden;
 }
