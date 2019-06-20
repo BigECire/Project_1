@@ -31,7 +31,7 @@ $(document).ready(function () {
         $("#results").append(card)
 
       }
-      var URL = "https://calendarific.com/api/v2?api_key=2c0dbaf7a60237e5add4aeb4980344a79a0d269d&country=US&year=2019"
+      var URL = "https://www.googleapis.com/calendar/v3/calendars/en.usa%23holiday%40group.v.calendar.google.com/events?key=AIzaSyC7J53tIqAbatG07Zi4OcnhRsjHMxUovgo"
       $.ajax({
         url: URL,
         method: "GET"
@@ -40,6 +40,7 @@ $(document).ready(function () {
       })
     });
   });
+ 
   $(document).on("click", ".result-card", function () {
     console.log("clicked");
 
