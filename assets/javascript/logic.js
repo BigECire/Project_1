@@ -40,7 +40,7 @@ $(document).ready(function () {
       })
     });
   });
- 
+
   $(document).on("click", ".result-card", function () {
     console.log("clicked");
 
@@ -48,9 +48,35 @@ $(document).ready(function () {
     localStorage.clear();
     localStorage.setItem("Id", drinkId);
     document.location.href = "recipe_page.html"
-    
-    
+
+
   })
 
- 
+
+
+  var URL = "https://www.googleapis.com/calendar/v3/calendars/en.usa%23holiday%40group.v.calendar.google.com/events?key=AIzaSyC7J53tIqAbatG07Zi4OcnhRsjHMxUovgo"
+  $.ajax({
+    url: URL,
+    method: "GET"
+  }).then(function (response) {
+    console.log(response.items[34].start.date);
+    console.log(moment().isBefore(response.items[34].start.date))
+    var holidayFound = false;
+    var i = 0;
+    while (!holidayFound) {
+      if (!moment().isBefore(response.items[i].start.date)) {
+        i++
+      }
+      else if (moment().isBefore(response.items[i].start.date)) {
+        $("#reasons").text(response.items[i].summary + " is on the horizon!")
+        holidayFound = true
+      }
+
+    }
+
+
+
+
+  })
+
 })
