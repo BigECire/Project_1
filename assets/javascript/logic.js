@@ -40,6 +40,7 @@ $(document).ready(function () {
       })
     });
   });
+ 
   $(document).on("click", ".result-card", function () {
     console.log("clicked");
 
