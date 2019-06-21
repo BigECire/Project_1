@@ -23,7 +23,3 @@ body {
     color: #9cb805;
     font-size: 30px;
 }
-
-#results:empty{
-    visibility: hidden;
-}
