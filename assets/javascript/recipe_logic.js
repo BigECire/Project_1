@@ -38,19 +38,52 @@ $(document).ready(function () {
         storageBucket: "time-for-a-drink.appspot.com",
         messagingSenderId: "549694223569",
         appId: "1:549694223569:web:17b82da5b0a4183a"
-      };
-      // Initialize Firebase
-      firebase.initializeApp(firebaseConfig);
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
 
-      var database = firebase.database();
+    var database = firebase.database();
 
-      $("#favorites-btn").on("click", function(){
-          console.log("hi")
-        
-        var favorites= [1111]
-        var toTry = [3434]
-       
-        database.ref("drinkData").push(favorites);
-        database.ref("drinkData").push(toTry);
-      })
+    $("#favorites-btn").on("click", function () {
+        console.log("hi")
+        var favGet = database.ref("drinkData/favorites")
+        var favRef = database.ref("drinkData")
+        var favorites
+        favGet.once('value').then(function (snapshot) {
+            favorites = snapshot.val()
+            console.log(favorites)
+            if (favorites[0] === "fake"){
+                favorites = []
+            }
+
+            var repeatCheck = favorites.indexOf(localStorage.getItem("Id"))
+
+            if (repeatCheck === -1){
+                favorites.push(localStorage.getItem("Id"))
+                favRef.child("favorites").set(favorites)
+            }
+            console.log(favorites)
+        })
+    })
+    $("#try-btn").on("click", function () {
+        console.log("hi")
+        var tryGet = database.ref("drinkData/toTry")
+        var tryRef = database.ref("drinkData")
+        var toTry
+        tryGet.once('value').then(function (snapshot) {
+            toTry = snapshot.val()
+            console.log(toTry)
+            if (toTry[0] === "fake"){
+                toTry = []
+            }
+
+            var repeatCheck = toTry.indexOf(localStorage.getItem("Id"))
+
+            if (repeatCheck === -1){
+                toTry.push(localStorage.getItem("Id"))
+                tryRef.child("toTry").set(toTry)
+            }
+            console.log(toTry)
+        })
+    })
 })
