@@ -12,6 +12,7 @@ $(document).ready(function () {
       method: "GET"
     }).then(function (response) {
       console.log(response);
+      $("#results").empty();
       for (let i = 0; i < response.drinks.length; i++) {
         var card = $("<div>")
         card.addClass("card result-card")
