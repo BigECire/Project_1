@@ -16,7 +16,7 @@ $(document).ready(function () {
             $("#recipe-instructions").text(response.drinks[0].strInstructions)
             var ingredient = response.drinks[0].strIngredient1
             var i = 1
-            while (ingredient !== "") {
+            while (ingredient !== null) {
                 console.log(response["drinks"][0]["strIngredient" + i] + ": " + response["drinks"][0]["strMeasure" + i]);
                 var newRow = $("<tr>").append(
                     $("<td>").text(response["drinks"][0]["strIngredient" + i]),
