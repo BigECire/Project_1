@@ -8,11 +8,8 @@ $(document).ready(function () {
         }).then(function (response) {
             console.log(response);
 
-            console.log(response.drinks[0].strDrink);
             $("#recipe-name").text(response.drinks[0].strDrink)
-            console.log(response.drinks[0].strDrinkThumb);
             $("#recipe-img").attr("src", response.drinks[0].strDrinkThumb)
-            console.log(response.drinks[0].strInstructions);
             $("#recipe-instructions").text(response.drinks[0].strInstructions)
             var ingredient = response.drinks[0].strIngredient1
             var i = 1
@@ -26,6 +23,11 @@ $(document).ready(function () {
                 $("#ingredients-table").append(newRow);
                 i++
                 ingredient = response["drinks"][0]["strIngredient" + i]
+
+                if (i == 13) {
+                console.log(i);
+                    ingredient = null;
+                }
             }
 
         })
@@ -52,13 +54,13 @@ $(document).ready(function () {
         favGet.once('value').then(function (snapshot) {
             favorites = snapshot.val()
             console.log(favorites)
-            if (favorites[0] === "fake"){
+            if (favorites[0] === "fake") {
                 favorites = []
             }
 
             var repeatCheck = favorites.indexOf(localStorage.getItem("Id"))
 
-            if (repeatCheck === -1){
+            if (repeatCheck === -1) {
                 favorites.push(localStorage.getItem("Id"))
                 favRef.child("favorites").set(favorites)
             }
@@ -73,13 +75,13 @@ $(document).ready(function () {
         tryGet.once('value').then(function (snapshot) {
             toTry = snapshot.val()
             console.log(toTry)
-            if (toTry[0] === "fake"){
+            if (toTry[0] === "fake") {
                 toTry = []
             }
 
             var repeatCheck = toTry.indexOf(localStorage.getItem("Id"))
 
-            if (repeatCheck === -1){
+            if (repeatCheck === -1) {
                 toTry.push(localStorage.getItem("Id"))
                 tryRef.child("toTry").set(toTry)
             }
