@@ -14,7 +14,6 @@ $(document).ready(function () {
             var ingredient = response.drinks[0].strIngredient1
             var i = 1
             while (ingredient !== null) {
-                console.log(response["drinks"][0]["strIngredient" + i] + ": " + response["drinks"][0]["strMeasure" + i]);
                 var newRow = $("<tr>").append(
                     $("<td>").text(response["drinks"][0]["strIngredient" + i]),
                     $("<td>").text(response["drinks"][0]["strMeasure" + i])
@@ -25,7 +24,6 @@ $(document).ready(function () {
                 ingredient = response["drinks"][0]["strIngredient" + i]
 
                 if (i == 13) {
-                console.log(i);
                     ingredient = null;
                 }
             }

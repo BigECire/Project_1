@@ -93,7 +93,6 @@ $(document).ready(function () {
                     btn.text("Remove")
                     listRow.append(btn)
 
-
                     $("#drinks-to-try").append(listRow)
                 })
             }
@@ -110,7 +109,6 @@ $(document).ready(function () {
     })
 
     $(document).on("click", ".toTry", function () {
-        console.log("clicked");
 
         var drinkId = $(this).attr("data-id")
         localStorage.clear();
@@ -119,7 +117,6 @@ $(document).ready(function () {
     })
 
     $(document).on("click", ".remove-favorites", function () {
-        console.log("clicked");
 
         var drinkId = $(this).attr("data-id")
         favGet.once('value').then(function (snapshot) {
@@ -139,7 +136,6 @@ $(document).ready(function () {
     })
 
     $(document).on("click", ".remove-toTry", function () {
-        console.log("clicked");
 
         var drinkId = $(this).attr("data-id")
         tryGet.once('value').then(function (snapshot) {
