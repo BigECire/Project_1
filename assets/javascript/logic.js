@@ -3,6 +3,9 @@ $(document).ready(function () {
 
     var searchType = $(".type-of-search").val();
     var seachTerm = $(".search-term").val();
+    if ( searchType == "Choose..." ) { 
+      return; 
+    }
     var queryURL = "https://www.thecocktaildb.com/api/json/v1/1/" + searchType + "=" + seachTerm;
     $.ajax({
       url: queryURL,
