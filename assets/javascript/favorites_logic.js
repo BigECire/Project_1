@@ -18,7 +18,6 @@ $(document).ready(function () {
     var favorites
     favGet.once('value').then(function (snapshot) {
         favorites = snapshot.val()
-        console.log(favorites)
         if (favorites[0] === "fake") {
             var listRow = $("<li>")
             listRow.addClass("list-group-item")
@@ -61,7 +60,6 @@ $(document).ready(function () {
     var toTry
     tryGet.once('value').then(function (snapshot) {
         toTry = snapshot.val()
-        console.log(toTry)
         if (toTry[0] === "fake") {
             var listRow = $("<li>")
             listRow.addClass("list-group-item")
@@ -100,7 +98,6 @@ $(document).ready(function () {
     })
 
     $(document).on("click", ".favorites", function () {
-        console.log("clicked");
 
         var drinkId = $(this).attr("data-id")
         localStorage.clear();
@@ -121,15 +118,12 @@ $(document).ready(function () {
         var drinkId = $(this).attr("data-id")
         favGet.once('value').then(function (snapshot) {
             var favorites = snapshot.val()
-            console.log(favorites)
             var here = favorites.indexOf(drinkId)
             favorites.splice(here, 1)
-            console.log(favorites.length)
             if (favorites.length === 0) {
                 favorites = ["fake"]
             }
             favRef.child("favorites").set(favorites)
-            console.log(favorites)
 
             $(".fav-" + drinkId).remove();
         })
@@ -140,20 +134,14 @@ $(document).ready(function () {
         var drinkId = $(this).attr("data-id")
         tryGet.once('value').then(function (snapshot) {
             var toTry = snapshot.val()
-            console.log(toTry)
             var here = toTry.indexOf(drinkId)
             toTry.splice(here, 1)
-            console.log(toTry.length)
             if (toTry.length === 0) {
                 toTry = ["fake"]
             }
             tryRef.child("toTry").set(toTry)
-            console.log(toTry)
 
             $(".try-" + drinkId).remove();
         })
     })
-
-    console.log("w")
-
 })
