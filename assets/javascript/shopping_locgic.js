@@ -6,13 +6,11 @@ $(document).ready(function () {
             url: queryURL,
             method: "GET"
         }).then(function (response) {
-            console.log(response);
 
             $("#item-img").attr("src", response.drinks[0].strDrinkThumb)
             var ingredient = response.drinks[0].strIngredient1
             var i = 1
             while (ingredient !== "") {
-                console.log(response["drinks"][0]["strIngredient" + i]);
                 var newRow = $("<tr>").append(
                     $("<td>").text(response["drinks"][0]["strIngredient" + i]),
                     $("<td>").text("Na")
