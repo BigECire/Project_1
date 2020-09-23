@@ -66,13 +66,11 @@ $(document).ready(function () {
         })
     })
     $("#try-btn").on("click", function () {
-        console.log("hi")
         var tryGet = database.ref("drinkData/toTry")
         var tryRef = database.ref("drinkData")
         var toTry
         tryGet.once('value').then(function (snapshot) {
             toTry = snapshot.val()
-            console.log(toTry)
             if (toTry[0] === "fake") {
                 toTry = []
             }
@@ -83,7 +81,6 @@ $(document).ready(function () {
                 toTry.push(localStorage.getItem("Id"))
                 tryRef.child("toTry").set(toTry)
             }
-            console.log(toTry)
         })
     })
 })
