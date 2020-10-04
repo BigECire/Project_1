@@ -1,4 +1,7 @@
 $(document).ready(function () {
+  function random1(arr) {
+    return arr[Math.floor(Math.random() * arr.length()) ]
+  }
   $("#submit").on("click", function () {
 
     var searchType = $(".type-of-search").val();
