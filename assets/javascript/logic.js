@@ -1,5 +1,5 @@
 $(document).ready(function () {
-  function random1(arr) {
+  function random(arr) {
     return arr[Math.floor(Math.random() * arr.length()) ]
   }
   $("#submit").on("click", function () {
@@ -67,7 +67,7 @@ $(document).ready(function () {
         i++
       }
       else if (moment().isBefore(response.items[i].start.date)) {
-        $("#reasons").text(response.items[i].summary + " is on the horizon!")
+        $("#reasons").text(response.items[i].summary + random())
         holidayFound = true
       }
     }
