@@ -53,7 +53,7 @@ $(document).ready(function () {
     document.location.href = "recipe_page.html"
   })
   
-  var soon = ["is on the horizon!" ,"is approaching soon!"]
+  var soon = ["is on the horizon!", "is approaching soon!", " eve"]
   var otherExsuse = []
   var URL = "https://www.googleapis.com/calendar/v3/calendars/en.usa%23holiday%40group.v.calendar.google.com/events?key=AIzaSyC7J53tIqAbatG07Zi4OcnhRsjHMxUovgo"
   $.ajax({
