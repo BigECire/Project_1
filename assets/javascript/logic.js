@@ -1,6 +1,9 @@
+function random(arr) {
+  return arr[Math.floor(Math.random() * arr.length) ]
+}
 $(document).ready(function () {
   function random(arr) {
-    return arr[Math.floor(Math.random() * arr.length()) ]
+    return arr[Math.floor(Math.random() * arr.length) ]
   }
   $("#submit").on("click", function () {
 
@@ -53,21 +56,24 @@ $(document).ready(function () {
     document.location.href = "recipe_page.html"
   })
   
-  var soon = ["is on the horizon!", "is approaching soon!", " eve"]
+  var soon = [" is on the horizon!", " is approaching soon!", " eve"]
   var otherExsuse = ["Been a long Day?"]
   var URL = "https://www.googleapis.com/calendar/v3/calendars/en.usa%23holiday%40group.v.calendar.google.com/events?key=AIzaSyC7J53tIqAbatG07Zi4OcnhRsjHMxUovgo"
   $.ajax({
     url: URL,
     method: "GET"
   }).then(function (response) {
+    console.log(response)
     var holidayFound = false;
     var i = 0;
     while (!holidayFound) {
       if (!moment().isBefore(response.items[i].start.date)) {
+        console.log("d" + i)
         i++
       }
       else if (moment().isBefore(response.items[i].start.date)) {
-        $("#reasons").text(response.items[i].summary + random())
+        $("#reasons").append(response.items[i].summary + random(soon))
+        console.log("d")
         holidayFound = true
       }
     }
