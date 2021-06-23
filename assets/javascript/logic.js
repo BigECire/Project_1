@@ -1,6 +1,3 @@
-function random(arr) {
-  return arr[Math.floor(Math.random() * arr.length) ]
-}
 $(document).ready(function () {
   function random(arr) {
     return arr[Math.floor(Math.random() * arr.length) ]
